@@ -54,6 +54,11 @@ const ContactWrapper = styled.div`
         text-align: center;
     }
 
+    @media (max-width: 425px) {
+        padding: 0 30px;
+        text-align: center;
+    }
+
     h1 {
         margin-bottom: 0;
     }

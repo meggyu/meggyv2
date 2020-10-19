@@ -10,9 +10,9 @@ import ScrollToPlugin from 'gsap/ScrollToPlugin';
    
 import {
     Wrapper,
-    ContentWrapper,
-    MenuWrapper
+    ContentWrapper
 } from './Layout';
+import Menu from './Menu';
 import Home from './Home';
 import About from './About';
 import Contact from './Contact';
@@ -23,9 +23,9 @@ import { useWidthGreaterThan } from './useBreakpoints';
 
 const Container = () => {
     const router = useRouter();
-    const isMobile = useWidthGreaterThan(1024, false);
+    const isDesktop = useWidthGreaterThan(1024, false);
     const [isMenuHovered, setIsMenuHovered] = useState(false);
-    
+    console.log(isDesktop);
     const menuWrapperTopRef = useRef();
     const menuWrapperBottomRef = useRef();
     const wrapperRef = useRef();
@@ -75,29 +75,14 @@ const Container = () => {
 
     return (
         <Wrapper ref={wrapperRef}>
-            {isMobile ?
-                <MobileMenu>
-
-                </MobileMenu>
+            {isDesktop ?
+                <Menu
+                    menuWrapperTopRef={menuWrapperTopRef}
+                    menuWrapperBottomRef={menuWrapperBottomRef}
+                    setIsMenuHovered={setIsMenuHovered}
+                />
                 :
-                <React.Fragment>
-                    <MenuWrapper className="top" ref={menuWrapperTopRef}>
-                        <div onMouseEnter={() => setIsMenuHovered(true)} onMouseLeave={() => setIsMenuHovered(false)}>
-                            <a id="UpperLeft" className="menuItem" href="#about">About</a>
-                        </div>
-                        <div onMouseEnter={() => setIsMenuHovered(true)} onMouseLeave={() => setIsMenuHovered(false)}>
-                            <a id="UpperRight" className="menuItem" href="#portfolio">Portfolio</a>
-                        </div>
-                    </MenuWrapper>
-                    <MenuWrapper className="bottom" ref={menuWrapperBottomRef}>
-                        <div onMouseEnter={() => setIsMenuHovered(true)} onMouseLeave={() => setIsMenuHovered(false)}>
-                            <a id="BottomLeft" className="menuItem" href="#resume">Resume</a>
-                        </div>
-                        <div onMouseEnter={() => setIsMenuHovered(true)} onMouseLeave={() => setIsMenuHovered(false)}>
-                            <a id="BottomRight" className="menuItem" href="#contact">Contact</a>
-                        </div>
-                    </MenuWrapper>
-                </React.Fragment>
+                <MobileMenu />
             }
             <ContentWrapper>
                 <Home />

@@ -30,7 +30,7 @@ const AboutWrapper = styled.div`
     }
 
     @media (max-width: 1910px) {
-        padding: 0 70px;
+        padding: 70px 70px 0;
     }
 
     @media (max-width: 1025px) {
@@ -42,9 +42,12 @@ const AboutWrapper = styled.div`
         }
     }
 
-    @media (max-width: 425px) {
+    @media (max-width: 769px) {
         height: auto;
-        padding: 0 30px;
+    }
+
+    @media (max-width: 425px) {
+        padding: 70px 30px 0;
 
         ${LeftContainer} img {
             width: 300px;

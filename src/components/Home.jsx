@@ -40,12 +40,13 @@ const HomeWrapper = styled.div`
     margin-bottom: -100px;
     font-size: 40px;
     animation: 1.5s ${ScrollDownAnimation} infinite ease-in-out;
+    z-index: -1;
 
     @media (min-width: 2560px) {
       margin-bottom: -200px;
     }
 
-    @media (max-width: 425px) {
+    @media (max-width: 1024px) {
       margin-bottom: 0;
     }
   }
@@ -61,6 +62,7 @@ const MainWrapper = styled.div`
     flex-direction: column;
     text-align: left;
     width: 100%;
+    margin-bottom: 50px;
   }
 
   @media (max-width: 425px) {

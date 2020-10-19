@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faEllipsisH, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import './index.css';
 import Container from './components/Container';
 import * as serviceWorker from './serviceWorker';
 
-library.add(faEnvelope, fab);
+library.add(faEnvelope, faEllipsisH, faTimes, fab);
 
 ReactDOM.render(
   <React.StrictMode>

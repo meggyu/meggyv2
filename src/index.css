@@ -8,6 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #F4998D;
   background-color: #131B23;
+  overflow-x: hidden;
 }
 
 @media (max-width: 425px) {
@@ -41,6 +42,19 @@ h2 {
 button {
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
+  background-color: #131B23;
+  border: 3px solid #F4998D;
+  border-radius: 5px;
+  padding: 10px;
+  color: #F4998D;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.5s;
+}
+
+button:hover {
+  background-color: rgba(244, 153, 141, 0.3);
+  cursor: pointer;
 }
 
 @media (max-width: 425px) {

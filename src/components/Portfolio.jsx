@@ -15,11 +15,11 @@ const PortfolioWrapper = styled.div`
     padding: 0 100px;
 
     @media (max-width: 1910px) {
-        padding: 0 70px;
+        padding: 70px 70px 0;
     }
 
     @media (max-width: 425px) {
-        padding: 0 30px;
+        padding: 70px 30px 0;
     }
 `;
 
@@ -92,8 +92,6 @@ const Portfolio = () => {
     const router = useRouter();
     const portfolioWrapperRef = useRef();
     const isMobile = useWidthGreaterThan(1024, false);
-
-    console.log(isMobile);
 
     useEffect(() => {
         if (!portfolioWrapperRef.current) return;
