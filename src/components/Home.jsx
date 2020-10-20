@@ -1,11 +1,19 @@
-import React from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, {
+  useRef,
+  useEffect
+} from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import styled, { keyframes } from 'styled-components';
+
 import {
   Button,
   LeftContainer,
   AboutWrapper,
   RightContainer,
 } from './Layout';
-import styled, { keyframes } from 'styled-components';
+import useRouter from './useRouter';
 
 const ScrollDownAnimation = keyframes`
   0% {
@@ -81,8 +89,28 @@ export const Heading = styled.h1`
 `;
 
 const Home = () => {
+  const router = useRouter();
+  const homeWrapperRef = useRef();
+
+  useEffect(() => {
+    if (!homeWrapperRef.current) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    ScrollTrigger.create({
+        trigger: homeWrapperRef.current,
+        start: 'top center',
+        end: 'bottom center',
+        onEnter: () => {
+            router.push('/');
+        },
+        onEnterBack: () => {
+            router.push('/');
+        }
+    });
+}, [homeWrapperRef]);
+
   return (
-    <HomeWrapper>
+    <HomeWrapper ref={homeWrapperRef}>
       <MainWrapper>
         <LeftContainer>
           <img src='img/me1.png' alt="Issa me, Megan" />
