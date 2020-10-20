@@ -47,7 +47,6 @@ const Container = () => {
         window.addEventListener('scroll', throttle(() => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             if (scrollTop > lastScrollPosition) {
-                console.log('scrollingDown');
                 menuWrapperTop.current.classList.add('scrollDown');
                 menuWrapperBottom.current.classList.add('scrollDown');
             } else {

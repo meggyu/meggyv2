@@ -67,7 +67,6 @@ const MobileMenu = () => {
 
   useEffect(() => {
     if (!menuListRef.current) return;
-    console.log(isOpen);
     if (isOpen) {
       menuListRef.current.classList.add('isOpen');
     } else {
