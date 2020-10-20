@@ -1,4 +1,8 @@
-import React from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, {
+    useRef,
+    useEffect
+} from 'react';
 import styled from 'styled-components';
 
 export const MenuWrapper = styled.div`
@@ -61,7 +65,17 @@ export const MenuWrapper = styled.div`
     }
 `;
 
-const Menu = ({ menuWrapperTopRef, menuWrapperBottomRef, setIsMenuHovered }) => {
+const Menu = ({ setMenuWrapperTop, setMenuWrapperBottom, setIsMenuHovered }) => {
+    const menuWrapperTopRef = useRef();
+    const menuWrapperBottomRef = useRef();
+
+    useEffect(() => {
+        if (!menuWrapperTopRef.current && !menuWrapperBottomRef.current) return;
+
+        setMenuWrapperTop(menuWrapperTopRef);
+        setMenuWrapperBottom(menuWrapperBottomRef);
+    }, [menuWrapperTopRef, menuWrapperBottomRef])
+
     return (
         <React.Fragment>
             <MenuWrapper className="top" ref={menuWrapperTopRef}>

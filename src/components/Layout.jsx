@@ -16,15 +16,16 @@ export const Wrapper = styled.div`
 
     &:after {
         content: '';
-        opacity: 0;
+        opacity: 1;
         position: absolute;
-        width: 100%;
+        width: 100vw;
         height: auto;
         top: 0;
         bottom: 0;
         margin: 0;
         backdrop-filter: blur(20px) brightness(0.3);
         z-index: -1;
+        opacity: 0;
         transition: all 0.5s;
     }
 

@@ -29,7 +29,7 @@ const AboutWrapper = styled.div`
         margin-top: 0;
     }
 
-    @media (max-width: 1910px) {
+    @media (max-width: 1700px) {
         padding: 70px 70px 0;
     }
 
@@ -83,6 +83,7 @@ const About = () => {
         ScrollTrigger.create({
             trigger: aboutWrapperRef.current,
             start: 'top center',
+            end: 'bottom center',
             onEnter: () => {
                 aboutWrapperRef.current.classList.add('isVisible');
                 router.push('#about');

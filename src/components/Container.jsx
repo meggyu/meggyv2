@@ -24,10 +24,11 @@ import { useWidthGreaterThan } from './useBreakpoints';
 const Container = () => {
     const router = useRouter();
     const isDesktop = useWidthGreaterThan(1024, false);
+
     const [isMenuHovered, setIsMenuHovered] = useState(false);
-    console.log(isDesktop);
-    const menuWrapperTopRef = useRef();
-    const menuWrapperBottomRef = useRef();
+    const [menuWrapperTop, setMenuWrapperTop] = useState(null);
+    const [menuWrapperBottom, setMenuWrapperBottom] = useState(null);
+
     const wrapperRef = useRef();
 
     useEffect(() => {
@@ -40,31 +41,33 @@ const Container = () => {
     }, []);
 
     useEffect(() => {
-        if (!menuWrapperTopRef.current && !menuWrapperBottomRef.current) return;
+        if (!menuWrapperTop && !menuWrapperBottom) return;
+
         let lastScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
         window.addEventListener('scroll', throttle(() => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             if (scrollTop > lastScrollPosition) {
-                menuWrapperTopRef.current.classList.add('scrollDown');
-                menuWrapperBottomRef.current.classList.add('scrollDown');
+                console.log('scrollingDown');
+                menuWrapperTop.current.classList.add('scrollDown');
+                menuWrapperBottom.current.classList.add('scrollDown');
             } else {
-                menuWrapperTopRef.current.classList.remove('scrollDown');
-                menuWrapperBottomRef.current.classList.remove('scrollDown');
+                menuWrapperTop.current.classList.remove('scrollDown');
+                menuWrapperBottom.current.classList.remove('scrollDown');
             }
             lastScrollPosition = scrollTop <= 0 ? 0 : scrollTop;
         }, 100));
-    }, [menuWrapperTopRef, menuWrapperBottomRef]);
+    }, [menuWrapperTop, menuWrapperBottom]);
 
     useEffect(() => {
         if (!wrapperRef.current) return;
         if (isMenuHovered) {
             wrapperRef.current.classList.add('overlay');
-            menuWrapperTopRef.current.classList.remove('scrollDown');
-            menuWrapperBottomRef.current.classList.remove('scrollDown');
+            menuWrapperTop.current.classList.remove('scrollDown');
+            menuWrapperBottom.current.classList.remove('scrollDown');
         } else {
             wrapperRef.current.classList.remove('overlay');
         }
-    }, [wrapperRef, isMenuHovered]);
+    }, [wrapperRef, menuWrapperTop, menuWrapperBottom, isMenuHovered]);
 
     // useEffect(() => {
     //     if (router.location.hash === '#contact') {
@@ -77,8 +80,8 @@ const Container = () => {
         <Wrapper ref={wrapperRef}>
             {isDesktop ?
                 <Menu
-                    menuWrapperTopRef={menuWrapperTopRef}
-                    menuWrapperBottomRef={menuWrapperBottomRef}
+                    setMenuWrapperTop={setMenuWrapperTop}
+                    setMenuWrapperBottom={setMenuWrapperBottom}
                     setIsMenuHovered={setIsMenuHovered}
                 />
                 :
