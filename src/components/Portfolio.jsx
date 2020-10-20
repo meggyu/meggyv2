@@ -142,7 +142,8 @@ const Portfolio = () => {
                         <p>
                             All three of Hearthstone’s sites (Hearthstone, Hearthstone Esports, and Fireside Gatherings) share the same site 
                             navigation, but there wasn’t an easy way to navigate between them. The navigation update involved rebuilding
-                            the menu in React and making it into, getting the backend to retrieve nav data from Contentstack, and style changes. 
+                            the menu in React and making it into a shareable NPM package, getting the backend to retrieve nav data from Contentstack,
+                            and style changes. 
                         </p>
                         <a href="https://playhearthstone.com/en-us/" target="_blank" rel="noopener noreferrer">See it live →</a>
                     </ItemDescription>
