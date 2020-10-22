@@ -119,7 +119,7 @@ const Home = () => {
         <RightContainer>
           <Heading>Megan Koh</Heading>
           <AboutWrapper>
-            Howdy <span role="img" aria-label="handwave">👋</span> My name is Megan, and I am a software engineer and web developer based in sweaty ole ATX!
+            Hello <span role="img" aria-label="handwave">👋</span> My name is Megan, and I am a software engineer and web developer based in sweaty ole ATX!
           </AboutWrapper>
           <a href="#contact"><Button>Say Hi!</Button></a>
         </RightContainer>
