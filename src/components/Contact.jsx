@@ -63,14 +63,6 @@ const ContactWrapper = styled.div`
         margin-bottom: 0;
     }
 
-    .caption {
-        font-size: 18px;
-
-        @media (max-width: 425px) {
-            font-size: 14px;   
-        }
-    }
-
     ${SocialWrapper} {
         opacity: 0;
     }

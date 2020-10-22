@@ -91,7 +91,7 @@ const ItemDescription = styled.div`
 const Portfolio = () => {
     const router = useRouter();
     const portfolioWrapperRef = useRef();
-    const isMobile = useWidthGreaterThan(1024, false);
+    const isDesktop = useWidthGreaterThan(1024, false);
 
     useEffect(() => {
         if (!portfolioWrapperRef.current) return;
@@ -118,23 +118,24 @@ const Portfolio = () => {
 
             <ItemWrapper className="itemWrapper">
                 <ItemPicture className="leftAlign">
-                    <a href="https://playhearthstone.com/en-us/expansions-adventures/descent-of-dragons" target="_blank" rel="noopener noreferrer">
-                        <img src="img/descentOfDragons.jpg" alt="Descent of Dragons" />
+                    <a href="https://playhearthstone.com/en-us/expansions-adventures/madness-at-the-darkmoon-faire/" target="_blank" rel="noopener noreferrer">
+                        <img src="img/madnessAtDarkmoon.jpg" alt="Madness at the Darkmoon Faire" />
                     </a>
                 </ItemPicture>
                 <ItemDescription>
-                    <h2>Descent of Dragons</h2>
-                    2019
+                    <h2>Madness at the Darkmoon Faire</h2>
+                    2020
                     <p>
-                        Announcement site for Hearthstone’s seventeenth expansion, Descent of Dragons. This was the first expansion that
-                        deviated from our older expansion templates, with a seamless background that continued until the end of the page
-                        and some custom Easter egg animations. Built using JavaScript, Jade, and some React.
+                        Announcement site for Hearthstone’s nineteenth expansion, Madness at the Darkmoon Faire. This is only the second 
+                        expansion so far to be developed completely in React with a lot of interactable Easter eggs scattered throughout
+                        the desktop version. This site is one of the more interactive projects I've worked on, using GSAP's animation
+                        timeline and scroll trigger libraries.
                     </p>
-                    <a href="https://playhearthstone.com/en-us/expansions-adventures/descent-of-dragons" target="_blank" rel="noopener noreferrer">See it live →</a>
+                    <a href="https://playhearthstone.com/en-us/expansions-adventures/madness-at-the-darkmoon-faire/" target="_blank" rel="noopener noreferrer">See it live →</a>
                 </ItemDescription>
             </ItemWrapper>
 
-            {isMobile ?
+            {isDesktop ?
                 <ItemWrapper className="itemWrapper">
                     <ItemDescription>
                         <h2>Site Navigation in React</h2>
@@ -157,7 +158,7 @@ const Portfolio = () => {
                 <ItemWrapper className="itemWrapper">
                     <ItemPicture className="rightAlign">
                         <a href="https://playhearthstone.com/en-us/" target="_blank" rel="noopener noreferrer">
-                            <img src="img/siteNavigation.jpg" alt="Descent of Dragons" />
+                            <img src="img/siteNavigation.jpg" alt="Site Navigation in React" />
                         </a>
                     </ItemPicture>
                     <ItemDescription>
@@ -175,21 +176,59 @@ const Portfolio = () => {
 
             <ItemWrapper className="itemWrapper">
                 <ItemPicture className="leftAlign">
-                    <a href="https://playhearthstone.com/en-us/" target="_blank" rel="noopener noreferrer">
-                        <img src="img/homepageCards.jpg" alt="Home Page Card Carousel" />
+                    <a href="https://playhearthstone.com/en-us/expansions-adventures/descent-of-dragons" target="_blank" rel="noopener noreferrer">
+                        <img src="img/descentOfDragons.jpg" alt="Descent of Dragons" />
                     </a>
                 </ItemPicture>
                 <ItemDescription>
-                    <h2>Randomized Card Module</h2>
+                    <h2>Descent of Dragons</h2>
                     2019
                     <p>
-                        A card module similar to the ones in expansion pages, but now built in React instead of Jade. This module gets an
-                        array of cards from the latest expansion using our Card API and randomly returns 1 Legendary card, 1 Epic card, 1
-                        Rare card, and 2 Common cards. 
+                        Announcement site for Hearthstone’s seventeenth expansion, Descent of Dragons. This was the first expansion that
+                        deviated from our older expansion templates, with a seamless background that continued until the end of the page
+                        and some custom Easter egg animations. Built using JavaScript, Jade, and some React.
                     </p>
-                    <a href="https://playhearthstone.com/en-us/" target="_blank" rel="noopener noreferrer">See it live →</a>
+                    <a href="https://playhearthstone.com/en-us/expansions-adventures/descent-of-dragons" target="_blank" rel="noopener noreferrer">See it live →</a>
                 </ItemDescription>
             </ItemWrapper>
+
+            {isDesktop ?
+                <ItemWrapper className="itemWrapper">
+                    <ItemDescription>
+                        <h2>Randomized Card Module</h2>
+                        2019
+                        <p>
+                            A card module similar to the ones in expansion pages, but now built in React instead of Jade. This module gets an
+                            array of cards from the latest expansion using our Card API and randomly returns 1 Legendary card, 1 Epic card, 1
+                            Rare card, and 2 Common cards. 
+                        </p>
+                        <a href="https://playhearthstone.com/en-us/" target="_blank" rel="noopener noreferrer">See it live →</a>
+                    </ItemDescription>
+                    <ItemPicture className="rightAlign">
+                        <a href="https://playhearthstone.com/en-us/" target="_blank" rel="noopener noreferrer">
+                            <img src="img/homepageCards.jpg" alt="Home Page Card Carousel" />
+                        </a>
+                    </ItemPicture>
+                </ItemWrapper>
+                :
+                <ItemWrapper className="itemWrapper">
+                    <ItemPicture>
+                        <a href="https://playhearthstone.com/en-us/" target="_blank" rel="noopener noreferrer">
+                            <img src="img/homepageCards.jpg" alt="Home Page Card Carousel" />
+                        </a>
+                    </ItemPicture>
+                    <ItemDescription>
+                        <h2>Randomized Card Module</h2>
+                        2019
+                        <p>
+                            A card module similar to the ones in expansion pages, but now built in React instead of Jade. This module gets an
+                            array of cards from the latest expansion using our Card API and randomly returns 1 Legendary card, 1 Epic card, 1
+                            Rare card, and 2 Common cards. 
+                        </p>
+                        <a href="https://playhearthstone.com/en-us/" target="_blank" rel="noopener noreferrer">See it live →</a>
+                    </ItemDescription>
+                </ItemWrapper>
+            }
         </PortfolioWrapper>
     )
 };

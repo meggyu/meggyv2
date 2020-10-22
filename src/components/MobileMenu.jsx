@@ -87,7 +87,7 @@ const MobileMenu = () => {
         <ul>
           <li className="menuItem"><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>
           <li className="menuItem"><a href="#portfolio" onClick={() => setIsOpen(false)}>Portfolio</a></li>
-          <li className="menuItem"><a href="https://drive.google.com/file/d/1g8-C6ZV6NckASyrh4qVw8NgKnV8T0OOm/view?usp=sharing" target="_blank" onClick={() => setIsOpen(false)}>Resume</a></li>
+          <li className="menuItem"><a href="https://drive.google.com/file/d/1g8-C6ZV6NckASyrh4qVw8NgKnV8T0OOm/view?usp=sharing" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>Resume</a></li>
           <li className="menuItem"><a href="#contact" onClick={() => setIsOpen(false)}>Contact</a></li>
         </ul>
       </MenuList>

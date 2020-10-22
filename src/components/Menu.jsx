@@ -88,7 +88,7 @@ const Menu = ({ setMenuWrapperTop, setMenuWrapperBottom, setIsMenuHovered }) => 
             </MenuWrapper>
             <MenuWrapper className="bottom" ref={menuWrapperBottomRef}>
                 <div onMouseEnter={() => setIsMenuHovered(true)} onMouseLeave={() => setIsMenuHovered(false)}>
-                    <a id="BottomLeft" className="menuItem" href="https://drive.google.com/file/d/1g8-C6ZV6NckASyrh4qVw8NgKnV8T0OOm/view?usp=sharing" target="_blank">Resume</a>
+                    <a id="BottomLeft" className="menuItem" href="https://drive.google.com/file/d/1g8-C6ZV6NckASyrh4qVw8NgKnV8T0OOm/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
                 </div>
                 <div onMouseEnter={() => setIsMenuHovered(true)} onMouseLeave={() => setIsMenuHovered(false)}>
                     <a id="BottomRight" className="menuItem" href="#contact">Contact</a>

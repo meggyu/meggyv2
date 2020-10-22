@@ -78,6 +78,15 @@ img {
   height: auto;
 }
 
+.caption {
+  font-size: 18px;
+}
+
+@media (max-width: 425px) {
+  .caption {
+    font-size: 14px;   
+  }
+}
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
