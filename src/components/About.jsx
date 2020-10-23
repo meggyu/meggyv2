@@ -107,7 +107,7 @@ const About = () => {
                     constantly building new features to support the game and improve player experience.
                 </p>
                 <p>
-                    I graduated from Calvin College in 2018 with Bachelor of Science in Computer Science. Even though I am a programmer by trade,
+                    I graduated from Calvin College in 2019 with Bachelor of Science in Computer Science. Even though I am a programmer by trade,
                     I've always had a passion for digital design and enjoy designing and developing my own programs and applications! I work
                     mainly in JavaScript and React, with some experience in Java.
                 </p>
