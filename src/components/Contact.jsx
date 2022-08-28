@@ -112,7 +112,7 @@ const Contact = () => {
                 <a href="https://www.linkedin.com/in/megan-koh-b02182144/" target="_blank" rel="noopener noreferrer">
                     <div className="socialButton"><FontAwesomeIcon icon={['fab', 'linkedin']} /> LinkedIn</div>
                 </a>
-                <a href="https://www.instagram.com/megicorn_/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/meggyu_/" target="_blank" rel="noopener noreferrer">
                     <div className="socialButton"><FontAwesomeIcon icon={['fab', 'instagram']} /> Instagram</div>
                 </a>
                 <a href="https://github.com/kohzmay" target="_blank" rel="noopener noreferrer">

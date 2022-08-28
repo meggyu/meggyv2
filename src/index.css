@@ -9,6 +9,7 @@ body {
   color: #F4998D;
   background-color: #131B23;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 @media (max-width: 425px) {

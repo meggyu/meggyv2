@@ -23,10 +23,10 @@ export const Wrapper = styled.div`
         top: 0;
         bottom: 0;
         margin: 0;
-        backdrop-filter: blur(20px) brightness(0.3);
+        background-color: rgba(0, 0, 0, .8);
         z-index: -1;
         opacity: 0;
-        transition: all 0.5s;
+        transition: 0.5s all ease-in-out;
     }
 
     &.overlay {

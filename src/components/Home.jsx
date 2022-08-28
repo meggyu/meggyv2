@@ -79,13 +79,7 @@ const MainWrapper = styled.div`
 `;
 
 export const Heading = styled.h1`
-    font-style: italic;
-    text-transform: uppercase;
-    width: 400px;
-
-    @media (max-width: 1025px) {
-      width: 100%;
-    }
+  margin-top: 0;
 `;
 
 const Home = () => {
@@ -113,13 +107,15 @@ const Home = () => {
     <HomeWrapper ref={homeWrapperRef}>
       <MainWrapper>
         <LeftContainer>
-          <img src='img/me1.png' alt="Issa me, Megan" />
+          <img src="img/me1.png" alt="Me and Henry" />
         </LeftContainer>
 
         <RightContainer>
           <Heading>Megan Koh</Heading>
           <AboutWrapper>
-            Hello <span role="img" aria-label="handwave">👋</span> My name is Megan, and I am a software engineer and web developer based in sweaty ole ATX!
+            <p>Hello <span role="img" aria-label="handwave">👋</span> My name is Megan, and
+            I am a software engineer and web developer based in sweaty ole ATX!
+            </p>
           </AboutWrapper>
           <a href="#contact"><Button>Say Hi!</Button></a>
         </RightContainer>
