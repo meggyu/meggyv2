@@ -89,7 +89,6 @@ const ItemDescription = styled.div`
 const Portfolio = () => {
     const router = useRouter();
     const portfolioWrapperRef = useRef();
-    const isDesktop = useWidthGreaterThan(1024, false);
 
     useEffect(() => {
         if (!portfolioWrapperRef.current) return;
